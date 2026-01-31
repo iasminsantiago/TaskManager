@@ -9,12 +9,12 @@ http://localhost:9091/swagger-ui/index.html
 http://localhost:9091/h2-console/login.do?jsessionid=faaaff7a53042b3b20b0c8d326c9267e
 
 </br>
-| Ferramenta | Serve pra quê       |
-| ---------- | ------------------- |
-| H2 Console | Ver tabelas e dados |
-| Swagger    | Testar rotas da API |
-| Swagger UI | Interface gráfica   |
-| Try it out | Enviar requisição   |
+| Ferramenta | Serve pra quê       | </br>
+| ---------- | ------------------- |</br>
+| H2 Console | Ver tabelas e dados |</br>
+| Swagger    | Testar rotas da API |</br>
+| Swagger UI | Interface gráfica   |</br>
+| Try it out | Enviar requisição   |</br>
 | Execute    | Rodar a rota        |
 
 
