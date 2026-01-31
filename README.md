@@ -1,5 +1,5 @@
 # TaskManager
-Projeto feito na Treina Recife durante curso full stack  --  EM CONSTRUÇÃO
+Projeto feito na Treina Recife durante curso full stack  
 
 
 👤 Usuário
