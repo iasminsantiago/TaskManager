@@ -19,7 +19,7 @@ import jakarta.persistence.Enumerated;
 import jakarta.persistence.EnumType;
 
 
-// CORRECAO!!!!!!!!!!!!!!!  Em private long idProjeto  -> private long id;
+// CORRECAO!!!!!!!!!!!!!!!  Em private long idProjeto  -> private long id;   e long -> Long
 
 @Entity
 @Data
@@ -29,7 +29,7 @@ public class Projeto {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private Long id;
     private String nome;
     private String descricao;
     private LocalDate dataInicio;
@@ -37,6 +37,9 @@ public class Projeto {
     enum enumStatusProjeto {
         ATIVO, CONCLUIDO, CANCELADO
     }
+
+    //CORRECAO!!!!!!!!!! USAR ENUMTYPE
+    @Enumerated(EnumType.STRING)
     private enumStatusProjeto statusProjeto;
 
     /* status (Ativo, Concluído, Cancelado)
@@ -55,5 +58,6 @@ o responsavel */
 
 
 }
+
 
 
