@@ -2,7 +2,12 @@
 Criar usuário
 Listar usuários
 Buscar usuário por ID
-(Depois: validar email, status, etc.) */
+(Depois: validar email, status, etc.) 
+
+@Service → camada de negócio
+Service chama o Repository
+Controller não acessa Repository direto*/
+
 
 
 package br.com.treinarecife.sgp.service;
