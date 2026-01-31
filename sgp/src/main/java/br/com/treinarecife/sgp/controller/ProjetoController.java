@@ -41,10 +41,12 @@ public class ProjetoController {
     // pit mapping é uma rota, entao ela tem que recebr um apramentro especifico
     // o id nao é atualziado, nao faz sentido
     // lombok ja criou os metodos get e set pra mim, nao preciso esrever os metosos ge te set, so s usar
+    // CORREÇÃO!!!!!!!!!!!!  projeto.setTItulo(projetoDetails.getTitulo());  ->    projeto.setNome(projetoDetails.getNome());
+    // CORREÇÀO!!!!!!!!!!!   return projetoRepository.findById().map(projeto -> {        return projetoRepository.findById(id).map(projeto -> {
     @PutMapping("/{id}")
     public ResponseEntity<Projeto> putProjeto(@PathVariable Long id, @RequestBody Projeto projetoDetails) {
-        return projetoRepository.findById().map(projeto -> {
-            projeto.setTitulo(projetoDetails.getTitulo());
+        return projetoRepository.findById(id).map(projeto -> {
+            projeto.setNome(projetoDetails.getNome());
             // !!!!!!!!repetir para os outros campos, como descricao, titulo etc!!!!!!!
             Projeto updateProjeto = projetoRepository.save(projeto);
             return ResponseEntity.ok(updateProjeto);
@@ -60,8 +62,9 @@ public class ProjetoController {
         return projetoRepository.findAll();
     }
 
+    // CORREÇÃO!!!!!!!!!!!!!!     @GetMapping("/(id)") ->    @GetMapping("/{id}")
     // get id:
-    @GetMapping("/(id)")
+    @GetMapping("/{id}")
     public ResponseEntity<Projeto> getProjetoById(@PathVariable Long id) {
         return projetoRepository.findById(id).map(ResponseEntity::ok)
         .orElse(ResponseEntity.notFound().build());
@@ -79,6 +82,7 @@ public class ProjetoController {
     // a rota é api/usuario
    // a abse url é o  localost:8080
   // pra fazer algo num id espeiifco, faço /api/usuario/{id}
+
 
 
 
