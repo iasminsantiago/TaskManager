@@ -45,11 +45,19 @@ public class TarefaController {
     // pit mapping é uma rota, entao ela tem que recebr um apramentro especifico
     // o id nao é atualziado, nao faz sentido
     // lombok ja criou os metodos get e set pra mim, nao preciso esrever os metosos ge te set, so s usar
+    // CORREÇÀO!!!!!!!!!!  return tarefaRepository.findById().ma... -> return tarefaRepository.findById(id).ma...
     @PutMapping("/{id}")
     public ResponseEntity<Tarefa> putTarefa(@PathVariable Long id, @RequestBody Tarefa tarefaDetails) {
-        return tarefaRepository.findById().map(tarefa -> {
+        return tarefaRepository.findById(id).map(tarefa -> {
             tarefa.setTitulo(tarefaDetails.getTitulo());
             // !!!!!!!!repetir para os outros campos, como descricao, titulo etc!!!!!!!
+            // CORREÇÃO!!!!!!!!!! INSERIMOS OS OUTROS CAMPOS. 
+            // agora o PUT atualiza tudo
+            tarefa.setDescricao(tarefaDetails.getDescricao());
+            tarefa.setStatus(tarefaDetails.getStatus());
+            tarefa.setPrioridade(tarefaDetails.getPrioridade());
+            tarefa.setProjeto(tarefaDetails.getProjeto());
+            tarefa.setUsuario(tarefaDetails.getUsuario());
             Tarefa updateTarefa = tarefaRepository.save(tarefa);
             return ResponseEntity.ok(updateTarefa);
         }).orElse(ResponseEntity.notfound().build());
@@ -65,7 +73,8 @@ public class TarefaController {
     }
 
     // get id:
-    @GetMapping("/(id)")
+    // CORREÇÃO!!!!!!!!!!!      @GetMapping("/(id)") ->     @GetMapping("/{id}")
+    @GetMapping("/{id}")
     public ResponseEntity<Tarefa> getTarefaById(@PathVariable Long id) {
         return tarefaRepository.findById(id).map(ResponseEntity::ok)
         .orElse(ResponseEntity.notFound().build());
@@ -83,6 +92,7 @@ public class TarefaController {
     // a rota é api/usuario
    // a abse url é o  localost:8080
   // pra fazer algo num id espeiifco, faço /api/usuario/{id}
+
 
 
 
