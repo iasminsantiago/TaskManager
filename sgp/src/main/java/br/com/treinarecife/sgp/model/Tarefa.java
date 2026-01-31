@@ -1,6 +1,7 @@
 package br.com.treinarecife.sgp.model;
 
 import java.time.LocalDate;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -8,7 +9,11 @@ import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
+// CORRECAO!!!!!!!!!!!!!! FALTOU IMPORTAR JOINCOLUMN MANYTOONE ENUMEARETED ENUMTYPE
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.Enumerated;
+import jakarta.persistence.EnumType;
 
 
 @Entity
@@ -22,7 +27,8 @@ public class Tarefa {
     private Long id;
     private String titulo;
     private String descricao;
-    private LocalDate datacriacao;
+    // CORRECAO!!!!!!!!!!!!!!!!!! datacriacao; -> dataCriacao
+    private LocalDate dataCriacao;
     private LocalDate dataConclusao;
 
     //criando o enum em si
@@ -31,12 +37,16 @@ public class Tarefa {
     };
 
     // criando variável que envolve valores de enum
+    // CORRECAO!!!!!!!!!!!!!  FALTOU ANOTACAOD E ENUM
+    @Enumerated(EnumType.STRING)
     private enumPrioridade prioridade; 
 
     enum enumStatus {
         PENDENTE, FAZENDO, FEITO
     };
 
+    // CORRECAO!!!!!!!!!! INSERIR ANOTACAO DE ENUM
+    @Enumerated(EnumType.STRING)
     private enumStatus status;
 
 
@@ -47,11 +57,16 @@ public class Tarefa {
     @ManyToOne
     @JoinColumn(name = "projeto_id")
     private Projeto projeto;
+
+    @ManyToOne
+    @JoinColumn(name = "usuario_id")
+    private Usuario usuario;
     // projeto_id é o nome da coluna no banco de dados, nao o atributo idProjeto da calsse Projeto. Para n`zso confundir, renomeados de forma diferente.
     // JPA trabalha com objeto, isso cria a FK real no banco
     // PODE ser idProjeto, mas projeto_id é o padrão recomendado.
     // Mas ambas as opcoes criam uma FK, ambas apontam para Projeto.id, ambas funcionam no H2, MySQL, Postgres etc.
 }
+
 
 
 
