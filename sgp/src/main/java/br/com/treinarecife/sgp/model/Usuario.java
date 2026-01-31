@@ -1,6 +1,8 @@
 package br.com.treinarecife.sgp.model;
 
 import java.time.LocalDate;
+// CORREÇÃO!!!!!!!!!!!! FALTOU IMPORTAR import java.util.List;
+import java.util.List;
 
 // para colocar em ordem alfabetica, seleciona o bloco, cntl shift p, sort line ascending
 import jakarta.persistence.Entity;
@@ -10,6 +12,12 @@ import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+// CORREÇÃO!!!!!!!!!!!! FALTOU IMPORTAR import jakarta.persistence.OneToMany;, import jakarta.persistence.Enumerated; e import jakarta.persistence.EnumType;
+import jakarta.persistence.OneToMany;
+import jakarta.persistence.Enumerated;
+import jakarta.persistence.EnumType;
+
+
 
 
 // adicionaremos a annotation entidade, que é a entidade usuario
@@ -38,6 +46,9 @@ public class Usuario {
         ATIVO, BLOQUEADO, INATIVO
     }; // vetor de 3 posições
 
+
+    // CORREÇÃO!!!!!!!!!!!!!!! FALTOU   @Enumerated(EnumType.STRING)
+    @Enumerated(EnumType.STRING)
     private enumStatus status;
 
     // CORREÇAO!!!!!!!!!!!!! INSERIR RELACIONAEMTNOS 
@@ -52,3 +63,4 @@ public class Usuario {
 
 
 // o lombok faz o construtor e o getter e setter por mim, por isso ele nao colocou
+
