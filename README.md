@@ -66,7 +66,11 @@ Enum → usar @Enumerated(EnumType.STRING)
    // a abse url é o  localost:8080
   // pra fazer algo num id espeiifco, faço /api/usuario/{id}
 
+
+
 REGISTRO - O QUE MUDEI
+
+
 📂 1️⃣ UsuarioController.java  corrigimos para {} 
 @GetMapping("/(id)")  -> @GetMapping("/{id}")
 
