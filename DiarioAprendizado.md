@@ -6,7 +6,7 @@ Testes:
 Usei o Swagger para testar os endpoints REST e o H2 Console para validar os dados persistidos no banco.
 
 http://localhost:9091/swagger-ui/index.html
-
+http://localhost:9091/h2-console/login.do?jsessionid=faaaff7a53042b3b20b0c8d326c9267e
 
 </br>
 | Ferramenta | Serve pra quê       |
