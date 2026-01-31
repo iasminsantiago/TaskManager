@@ -16,3 +16,7 @@ pertence a um usuário
 
 
 Quem tem a FK usa @ManyToOne
+@OneToMany → lado que tem lista
+Relacionamento SEMPRE é objeto, não id
+
+Enum → usar @Enumerated(EnumType.STRING)
