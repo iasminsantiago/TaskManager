@@ -47,6 +47,8 @@ public class Tarefa {
     @JoinColumn(name = "projeto_id")
     private Projeto projeto;
     // JPA trabalha com objeto, isso cria a FK real no banco
-
+    // PODE ser idProjeto, mas projeto_id é o padrão recomendado.
+    // Mas ambas as opcoes criam uma FK, ambas apontam para Projeto.id, ambas funcionam no H2, MySQL, Postgres etc.
 }
+
 
