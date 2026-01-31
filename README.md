@@ -13,3 +13,6 @@ pode ter várias tarefas
 ✅ Tarefa
 pertence a um projeto
 pertence a um usuário
+
+
+Quem tem a FK usa @ManyToOne
