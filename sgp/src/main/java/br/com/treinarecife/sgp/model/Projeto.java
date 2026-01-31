@@ -1,5 +1,8 @@
 package br.com.treinarecife.sgp.model;
 
+// CORREÇÁO!!!!!!!!!!!!! IMPORTAR LIST
+import java.util.List;
+
 import java.time.LocalDate;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -8,6 +11,13 @@ import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+// CORRECAO!!!!!!!!!!!!! FALTOU IMPORTAR ONETOMANUY, MANYTOONE, JOINCOLUMN, ENUMERATED E ENUMTYPE
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.Enumerated;
+import jakarta.persistence.EnumType;
+
 
 
 
@@ -45,3 +55,4 @@ o responsavel */
 
 
 }
+
