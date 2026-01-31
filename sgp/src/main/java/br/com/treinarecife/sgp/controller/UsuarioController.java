@@ -4,7 +4,7 @@ import java.util.List;
 
 /* // linha 1 - package
 // linha 2 - cores do java java....
-// linha 3 imports acssorios como springframework
+// linha 3 imports acessorios como springframework
 // linha 4 - import dos codigos que eu criei  */
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -45,7 +45,9 @@ public class UsuarioController {
     // o metodo find all recupera todo so usuarios que há na tabela
     }
 
-    @GetMapping("/(id)")
+    // CORREÇÃO!!!!!!!!!!!! não é (id), é {id} 
+    // getUsuariobyId é um metodo que nomeados, mas poderia ser também buscarPorId(@Pat....
+    @GetMapping("/{id}")
     public ResponseEntity<Usuario> getUsuarioById(@PathVariable Long id) {
         return usuarioRepository.findById(id).map(ResponseEntity::ok)
         .orElse(ResponseEntity.notFound().build());
@@ -54,3 +56,4 @@ public class UsuarioController {
 
 
 }
+
