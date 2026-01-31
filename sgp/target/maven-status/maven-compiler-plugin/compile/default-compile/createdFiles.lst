@@ -1,0 +1,10 @@
+br\com\treinarecife\sgp\model\Tarefa$enumStatus.class
+br\com\treinarecife\sgp\model\Tarefa$enumPrioridade.class
+br\com\treinarecife\sgp\SgpApplication.class
+br\com\treinarecife\sgp\model\Usuario$enumStatus.class
+br\com\treinarecife\sgp\model\Usuario.class
+br\com\treinarecife\sgp\controller\TarefaController.class
+br\com\treinarecife\sgp\controller\UsuarioController.class
+br\com\treinarecife\sgp\repository\TarefaRepository.class
+br\com\treinarecife\sgp\model\Tarefa.class
+br\com\treinarecife\sgp\repository\UsuarioRepository.class
