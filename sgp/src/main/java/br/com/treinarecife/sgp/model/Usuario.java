@@ -40,6 +40,15 @@ public class Usuario {
 
     private enumStatus status;
 
+    // CORREÇAO!!!!!!!!!!!!! INSERIR RELACIONAEMTNOS 
+    // usuario para projetos e usuario para tarefas
+    @OneToMany(mappedBy = "responsavel")
+    private List<Projeto> projetos;
+
+    @OneToMany(mappedBy = "usuario")
+    private List<Tarefa> tarefas;
+
 }
+
 
 // o lombok faz o construtor e o getter e setter por mim, por isso ele nao colocou
