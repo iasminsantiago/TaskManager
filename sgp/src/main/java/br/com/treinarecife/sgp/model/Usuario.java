@@ -1,10 +1,9 @@
 package br.com.treinarecife.sgp.model;
 
 import java.time.LocalDate;
-// CORREÇÃO!!!!!!!!!!!! FALTOU IMPORTAR import java.util.List;
 import java.util.List;
 
-// para colocar em ordem alfabetica, seleciona o bloco, cntl shift p, sort line ascending
+// Boa prática: colocar em ordem alfabética -> seleciona o bloco, cntl shift p, sort line ascending
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -12,7 +11,6 @@ import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-// CORREÇÃO!!!!!!!!!!!! FALTOU IMPORTAR import jakarta.persistence.OneToMany;, import jakarta.persistence.Enumerated; e import jakarta.persistence.EnumType;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Enumerated;
 import jakarta.persistence.EnumType;
@@ -20,7 +18,7 @@ import jakarta.persistence.EnumType;
 
 
 
-// adicionaremos a annotation entidade, que é a entidade usuario
+// Adicionaremos a annotation entidade, que é a entidade usuário
 @Entity
 @Data
 @NoArgsConstructor
@@ -30,7 +28,7 @@ public class Usuario {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;  // usamos long pois é maior que int
-    // por padrão: toda entidade, o id dela é do tipo long
+    // Por padrão: em toda entidade, o id dela é do tipo Long
 
     private String nome;
 
@@ -40,19 +38,18 @@ public class Usuario {
 
     private String senha;
 
-    private LocalDate dataNascimento;  // localdate não é nativo, importamos bibliotea
+    private LocalDate dataNascimento;  // localDate não é nativo, por isso importamos bibliotea
 
     enum enumStatus {
         ATIVO, BLOQUEADO, INATIVO
-    }; // vetor de 3 posições
+    }; // Vetor de 3 posições
 
 
-    // CORREÇÃO!!!!!!!!!!!!!!! FALTOU   @Enumerated(EnumType.STRING)
     @Enumerated(EnumType.STRING)
     private enumStatus status;
 
-    // CORREÇAO!!!!!!!!!!!!! INSERIR RELACIONAEMTNOS 
-    // usuario para projetos e usuario para tarefas
+    // Inserindo relacionamentos:
+    // usuario para projetos, e usuario para tarefas
     @OneToMany(mappedBy = "responsavel")
     private List<Projeto> projetos;
 
@@ -60,7 +57,6 @@ public class Usuario {
     private List<Tarefa> tarefas;
 
 }
+// o lombok faz o construtor e o getter e setter por mim, por isso não usamos estes métodos
 
-
-// o lombok faz o construtor e o getter e setter por mim, por isso ele nao colocou
 
