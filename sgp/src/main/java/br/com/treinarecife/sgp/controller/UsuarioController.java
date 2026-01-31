@@ -2,11 +2,6 @@ package br.com.treinarecife.sgp.controller;
 
 import java.util.List;
 
-/* // linha 1 - package
-// linha 2 - cores do java java....
-// linha 3 imports acessorios como springframework
-// linha 4 - import dos codigos que eu criei  */
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -19,9 +14,6 @@ import org.springframework.web.bind.annotation.RestController;
 import br.com.treinarecife.sgp.model.Usuario;
 import br.com.treinarecife.sgp.repository.UsuarioRepository;
 
-/* // rest controller recebe as requisições de classe
-// request mapping é o caminho da rota 
-// NUNCA SEPARAR @ da classe que vem logo abaixo, pois diz-se que @restcontroller alerarrá pela linha de baixo, ai ao inves de vir a classe vem um comentaroo, ele nao entende */
 
 @RestController
 @RequestMapping("/api/usuarios")
@@ -30,22 +22,21 @@ public class UsuarioController {
     @Autowired  
     private UsuarioRepository usuarioRepository;
     
-    // cria uma linha e retorna, a partir do usuariorepository, o que criamos
+    // cria uma linha e retorna, a partir do UsuarioRepository, o que criamos
     @PostMapping 
     public Usuario postUsuario(@RequestBody Usuario usuario){
         return usuarioRepository.save(usuario);
     }
     // faço metodo publico pois ele será acessado por fora
-    // criei um metodo que chamei de postUsuario, o o arg vem pelo corpo da mensagem, o request body
+    // criei um metodo que chamei de postUsuario, o arg vem pelo corpo da mensagem, o request body.
 
-    // retornará uma lista de usuários
+    // Retornará uma lista de usuários
     @GetMapping
     public List<Usuario> getAllUsuarios() {
         return usuarioRepository.findAll();
-    // o metodo find all recupera todo so usuarios que há na tabela
+    // O metodo find all recupera todo so usuarios que há na tabela
     }
 
-    // CORREÇÃO!!!!!!!!!!!! não é (id), é {id} 
     // getUsuariobyId é um metodo que nomeados, mas poderia ser também buscarPorId(@Pat....
     @GetMapping("/{id}")
     public ResponseEntity<Usuario> getUsuarioById(@PathVariable Long id) {
@@ -56,4 +47,5 @@ public class UsuarioController {
 
 
 }
+
 
