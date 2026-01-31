@@ -32,5 +32,16 @@ public class Projeto {
     /* status (Ativo, Concluído, Cancelado)
 o responsavel */
 
+    // CORREÇÁO!!!!!!!!! INSERIR LISTAS
+    // Varios projetos para um usuario. Fk é projeto
+    @ManyToOne
+    @JoinColumn(name = "usuario_id")
+    private Usuario responsavel;
+    
+    @OneToMany(mappedBy = "projeto")
+    private List<Tarefa> tarefas;
+
+
+
 
 }
