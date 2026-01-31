@@ -46,8 +46,13 @@ Rota errada: @GetMapping("/(id)") ->    @GetMapping("/{id}")
 findById() incompleto: return tarefaRepository.findById().ma... -> return tarefaRepository.findById(id).ma...
 inserimos os outros campos em     @PutMapping("/{id}")
 
+📂 4️⃣ Tarefa.java (MODEL)
+private Long idProjeto; -> @ManyToOne @JoinColumn(name = "projeto_id") private Projeto projeto;
 
+📂 5️⃣ Projeto.java
+Inserir relacionamentos manytoone (projetos para usuario) e onetomany (projeto para tarefas)
 
-
+📂 6️⃣ Usuario.java
+Inserir relacionamentos onetomany (usuario para projetos e para tarefas)
 
 
