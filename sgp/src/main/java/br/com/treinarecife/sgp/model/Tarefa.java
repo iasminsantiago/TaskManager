@@ -41,6 +41,12 @@ public class Tarefa {
 
 
     // tarefa importa projeto
-    private Long idProjeto;    // falta vincular a projeto, mas como?
+    // CORRREÇÃO!!!!!!!!!!! private Long idProjeto; -> @ManyToOne @JoinColumn(name = "projeto_id") private Projeto projeto;
+    // private Long idProjeto;    // falta vincular a projeto, mas como?
+    @ManyToOne
+    @JoinColumn(name = "projeto_id")
+    private Projeto projeto;
+    // JPA trabalha com objeto, isso cria a FK real no banco
 
 }
+
