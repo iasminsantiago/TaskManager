@@ -41,3 +41,33 @@ sgp
                  ├── model
                  ├── repository
                  └── SgpApplication.java
+
+```
+## ▶️ Como executar o projeto
+</br>
+Pré-requisitos
+- Java 21 instalado
+- Maven instalado
+
+#### Verifique:
+java -version
+</br>
+mvn -v
+
+#### Executando a aplicação
+Na pasta onde está o pom.xml, execute:
+mvn spring-boot:run
+
+
+#### A aplicação estará disponível em:
+http://localhost:9091
+
+
+</br>
+🛠️ Observações
+
+Projeto criado para fins de estudo.
+
+A atualização (PUT) pode ser expandida para incluir todos os atributos da entidade.
+
+Comentários no código indicam possíveis melhorias futuras.
