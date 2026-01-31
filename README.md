@@ -15,6 +15,25 @@ pertence a um projeto
 pertence a um usuário
 </br>
 </br>
+
+Testes:
+</br>
+Usei o Swagger para testar os endpoints REST e o H2 Console para validar os dados persistidos no banco.
+
+http://localhost:9091/swagger-ui/index.html
+
+
+</br>
+| Ferramenta | Serve pra quê       |
+| ---------- | ------------------- |
+| H2 Console | Ver tabelas e dados |
+| Swagger    | Testar rotas da API |
+| Swagger UI | Interface gráfica   |
+| Try it out | Enviar requisição   |
+| Execute    | Rodar a rota        |
+
+
+
 Service = regras de negócio
 
 Controller = endpoints
@@ -75,10 +94,27 @@ Enum → usar @Enumerated(EnumType.STRING)
    // a abse url é o  localost:8080
   // pra fazer algo num id espeiifco, faço /api/usuario/{id}
 
+</br>
+</br>
+
+🔹 4️⃣ Ordem CORRETA pra testar teu projeto
+
+⚠️ Isso é MUITO importante:
+1️⃣ Criar usuário
+POST /api/usuarios
+
+2️⃣ Criar projeto (usando ID do usuário)
+POST /api/usuarios/{usuarioId}/projetos
+
+No Swagger:
+coloca o usuarioId na URL
+body só com dados do projeto
+
+3️⃣ Criar tarefa (usando projeto + usuário)
+POST /api/projetos/{projetoId}/usuarios/{usuarioId}/tarefas
 
 
-REGISTRO - O QUE MUDEI
-
+## REGISTRO - O QUE MUDEI
 
 📂 1️⃣ UsuarioController.java  corrigimos para {} 
 @GetMapping("/(id)")  -> @GetMapping("/{id}")
