@@ -43,12 +43,15 @@ public class Tarefa {
     // tarefa importa projeto
     // CORRREÇÃO!!!!!!!!!!! private Long idProjeto; -> @ManyToOne @JoinColumn(name = "projeto_id") private Projeto projeto;
     // private Long idProjeto;    // falta vincular a projeto, mas como?
+    // projeto_id é uma FK que aponta para Projeto. @JoinColumn fala com o BANCO.
     @ManyToOne
     @JoinColumn(name = "projeto_id")
     private Projeto projeto;
+    // projeto_id é o nome da coluna no banco de dados, nao o atributo idProjeto da calsse Projeto. Para n`zso confundir, renomeados de forma diferente.
     // JPA trabalha com objeto, isso cria a FK real no banco
     // PODE ser idProjeto, mas projeto_id é o padrão recomendado.
     // Mas ambas as opcoes criam uma FK, ambas apontam para Projeto.id, ambas funcionam no H2, MySQL, Postgres etc.
 }
+
 
 
