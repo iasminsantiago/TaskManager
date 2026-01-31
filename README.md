@@ -19,6 +19,40 @@ Quem tem a FK usa @ManyToOne
 @OneToMany → lado que tem lista
 Relacionamento SEMPRE é objeto, não id
 
+
+mappedBy significa:
+✅ Diz que o outro lado é o dono do relacionamento
+✅ Evita criar duas FKs no banco
+
+@JoinColumn → cria a FK no banco
+mappedBy → diz “a FK está no outro lado”
+
+EX. PROJETOS.JAVA
+@JoinColumn(name = "usuario_id")     =  “Cria uma coluna no banco chamada usuario_id”, 
+Essa coluna:
+fica na tabela projeto
+aponta para usuario.id
+é uma Foreign Key de verdade. “Este objeto guarda a chave estrangeira.”
+👉 Quem usa @JoinColumn é o DONO do relacionamento. Projeto é o dono. 
+
+mappedBy — LADO INVERSO (NÃO cria FK)
+@OneToMany(mappedBy = "projeto")
+private List<Tarefa> tarefas;
+Isso diz ao JPA: “Não cria coluna aqui.  O relacionamento já está mapeado no atributo projeto da classe Tarefa.”
+NÃO cria coluna no banco
+NÃO cria FK
+Só existe para navegação no Java
+
+📌 Projeto → Tarefa
+Lado dono (Tarefa):
+@ManyToOne
+@JoinColumn(name = "projeto_id")  // ← DONO
+private Projeto projeto;
+
+Lado inverso (Projeto):
+@OneToMany(mappedBy = "projeto")  // ← INVERSO
+private List<Tarefa> tarefas;
+
 Enum → usar @Enumerated(EnumType.STRING)
   // end point é ponto final, rota.  a base url rodando na minha maquina é lcoalhost:8080, essa é a base url. abaxo dela, colocamos os endpoint: 
     ///api/usuario.
@@ -48,11 +82,24 @@ inserimos os outros campos em     @PutMapping("/{id}")
 
 📂 4️⃣ Tarefa.java (MODEL)
 private Long idProjeto; -> @ManyToOne @JoinColumn(name = "projeto_id") private Projeto projeto;
+inserir relacionamento entre tarefas e usuario @ManyToOne  @JoinColumn(name = "usuario_id")    private Usuario usuario;
+datacriacao; -> dataCriacao
+Importar manytone, joincolumn, enumerated, enumtype
+Inserir anotaçáo nos dois enum     @Enumerated(EnumType.STRING)
+
 
 📂 5️⃣ Projeto.java
 Inserir relacionamentos manytoone (projetos para usuario) e onetomany (projeto para tarefas)
+Importar list, ManyToOne, OneToMany, Enumerated, EnumType, JoinColumn
+padronizacao dos ids de cada classe: private long idProjeto  -> private long id; Esses ids nao se colidem entre si, cada um pertence a sua propria tabela
+Inserir @Enumerated(EnumType.STRING) em enumStatusProjeto
+Corrigir long:  private long id  -> private Long id
+
 
 📂 6️⃣ Usuario.java
 Inserir relacionamentos onetomany (usuario para projetos e para tarefas)
+Importar List e @OnetoMany: import java.util.List; e import jakarta.persistence.OneToMany;
+Inserir     @Enumerated(EnumType.STRING)
+Importar Enumerated e EnumType:   import jakarta.persistence.Enumerated; e import jakarta.persistence.EnumType;
 
 
