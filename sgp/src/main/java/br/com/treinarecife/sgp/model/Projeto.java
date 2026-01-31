@@ -19,17 +19,17 @@ import jakarta.persistence.Enumerated;
 import jakarta.persistence.EnumType;
 
 
-
+// CORRECAO!!!!!!!!!!!!!!!  Em private long idProjeto  -> private long id;
 
 @Entity
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 public class Projeto {
-
+    
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long idProjeto;
+    private long id;
     private String nome;
     private String descricao;
     private LocalDate dataInicio;
@@ -55,4 +55,5 @@ o responsavel */
 
 
 }
+
 
