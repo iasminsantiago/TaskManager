@@ -108,11 +108,15 @@ POST /api/projetos/{projetoId}/usuarios/{usuarioId}/tarefas
 findById sem o id: projetoRepository.findById() -> projetoRepository.findById(id)
 ****Não existe o campo titulo em projeto, só em tarefas. Mudamos para nome: projeto.setTitulo(projetoDetails.getTitulo());  -> projeto.setNome(projetoDetails.getNome());
 Rota errada: @GetMapping("/(id)") ->    @GetMapping("/{id}")
+notfound -> notFound
+importei PutMapping
 
 📂 3️⃣ TarefaController.java
 Rota errada: @GetMapping("/(id)") ->    @GetMapping("/{id}")
 findById() incompleto: return tarefaRepository.findById().ma... -> return tarefaRepository.findById(id).ma...
 inserimos os outros campos em     @PutMapping("/{id}")
+notfound -> notFound
+importei PutMapping
 
 📂 4️⃣ Tarefa.java (MODEL)
 private Long idProjeto; -> @ManyToOne @JoinColumn(name = "projeto_id") private Projeto projeto;
