@@ -5,21 +5,30 @@ Projeto feito na Treina Recife durante curso full stack
 👤 Usuário
 pode ter vários projetos
 pode ter várias tarefas
-
+</br>
 📁 Projeto
 pertence a um usuário
 pode ter várias tarefas
-
+</br>
 ✅ Tarefa
 pertence a um projeto
 pertence a um usuário
+</br>
+</br>
+Service = regras de negócio
 
+Controller = endpoints
 
+Repository = banco
+
+Relacionamentos são validados no Service
+</br>
+</br>
 Quem tem a FK usa @ManyToOne
 @OneToMany → lado que tem lista
 Relacionamento SEMPRE é objeto, não id
-
-
+</br>
+</br>
 mappedBy significa:
 ✅ Diz que o outro lado é o dono do relacionamento
 ✅ Evita criar duas FKs no banco
