@@ -24,7 +24,7 @@ pertence a um usuário
 - Spring Boot
 - Spring Data JPA
 - Maven
-- Banco de dados H2 / MySQL (ajuste conforme o projeto)
+- Banco de dados H2 / MySQL
 - VS Code
 
 ---
