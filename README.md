@@ -62,6 +62,7 @@ mvn -v
 
 #### Executando a aplicação
 Na pasta onde está o pom.xml, utilizando o terminal, execute:
+
 mvn spring-boot:run
 
 
