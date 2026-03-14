@@ -45,7 +45,8 @@ sgp
 ```
 ##  Como executar o projeto
 </br>
-Pré-requisitos
+Pré-requisitos:
+</br>
 - Java 21 instalado
 - Maven instalado
 
