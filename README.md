@@ -44,7 +44,6 @@ sgp
 
 ```
 ##  Como executar o projeto
-</br>
 Pré-requisitos:
 </br>
 
