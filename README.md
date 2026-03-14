@@ -52,13 +52,15 @@ Pré-requisitos:
 
 - Maven instalado
 
-#### Verifique:
+#### Verifique as versões do Java e Maven:
+ 
 java -version
 </br>
 mvn -v
 
+
 #### Executando a aplicação
-Na pasta onde está o pom.xml, execute:
+Na pasta onde está o pom.xml, utilizando o terminal, execute:
 mvn spring-boot:run
 
 
