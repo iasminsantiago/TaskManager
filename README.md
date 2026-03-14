@@ -16,8 +16,6 @@ Tarefa
 - pertence a um projeto
 - pertence a um usuário
 </br>
-</br>
-
 ---
 
 ##  Tecnologias utilizadas
