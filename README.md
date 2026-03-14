@@ -73,6 +73,6 @@ http://localhost:9091
 
 ## Observações
 
-A atualização (PUT) pode ser expandida para incluir todos os atributos da entidade.
+- A atualização (PUT) pode ser expandida para incluir todos os atributos da entidade.
 
-Comentários no código indicam possíveis melhorias futuras.
+- Comentários no código indicam possíveis melhorias futuras.
