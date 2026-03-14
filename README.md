@@ -29,7 +29,7 @@ pertence a um usuário
 
 ---
 
-## 📁 Estrutura do projeto
+##  Estrutura do projeto
 
 ```text
 sgp
@@ -64,8 +64,9 @@ http://localhost:9091
 
 
 </br>
-## Observações
 
+## Observações
+--
 Projeto criado para fins de estudo.
 
 A atualização (PUT) pode ser expandida para incluir todos os atributos da entidade.
