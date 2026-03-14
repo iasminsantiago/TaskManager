@@ -53,7 +53,7 @@ Pré-requisitos:
 
 #### Verifique as versões do Java e Maven:
  
-java -version
+java --version
 </br>
 mvn -v
 
