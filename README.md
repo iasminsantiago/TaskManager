@@ -46,8 +46,7 @@ sgp
 
 ```
 ##  Como executar o projeto
-Pré-requisitos:
-</br>
+### Pré-requisitos:
 
 - Java 21 instalado
 
@@ -61,11 +60,11 @@ mvn -v
 
 
 #### Executando a aplicação
-Na pasta onde está o pom.xml, utilizando o terminal, execute:
+- Na pasta onde está o pom.xml, utilizando o terminal, execute:
 
 mvn spring-boot:run
-
 </br>
+
 #### A aplicação estará disponível em:
 http://localhost:9091
 
