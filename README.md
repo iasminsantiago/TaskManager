@@ -2,15 +2,15 @@
 
 API REST desenvolvida em **Java com Spring Boot** para gerenciamento de **projetos e tarefas**.
 
-👤 Usuário
+- Usuário
 pode ter vários projetos
 pode ter várias tarefas
 </br>
-📁 Projeto
+- Projeto
 pertence a um usuário
 pode ter várias tarefas
 </br>
-✅ Tarefa
+- Tarefa
 pertence a um projeto
 pertence a um usuário
 </br>
@@ -18,7 +18,7 @@ pertence a um usuário
 
 ---
 
-## 🚀 Tecnologias utilizadas
+##  Tecnologias utilizadas
 
 - Java 21
 - Spring Boot
@@ -43,7 +43,7 @@ sgp
                  └── SgpApplication.java
 
 ```
-## ▶️ Como executar o projeto
+##  Como executar o projeto
 </br>
 Pré-requisitos
 - Java 21 instalado
@@ -64,7 +64,7 @@ http://localhost:9091
 
 
 </br>
-🛠️ Observações
+ Observações
 
 Projeto criado para fins de estudo.
 
