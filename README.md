@@ -2,17 +2,19 @@
 
 API REST desenvolvida em **Java com Spring Boot** para gerenciamento de **projetos e tarefas**.
 
-- Usuário
-pode ter vários projetos
-pode ter várias tarefas
+Usuário
+- pode ter vários projetos
+- pode ter várias tarefas
 </br>
-- Projeto
-pertence a um usuário
-pode ter várias tarefas
+
+Projeto
+- pertence a um usuário
+- pode ter várias tarefas
 </br>
-- Tarefa
-pertence a um projeto
-pertence a um usuário
+
+Tarefa
+- pertence a um projeto
+- pertence a um usuário
 </br>
 </br>
 
