@@ -66,8 +66,6 @@ http://localhost:9091
 </br>
 
 ## Observações
---
-Projeto criado para fins de estudo.
 
 A atualização (PUT) pode ser expandida para incluir todos os atributos da entidade.
 
